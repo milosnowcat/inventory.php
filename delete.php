@@ -3,22 +3,21 @@ include('session.php');
 
 if($start == 1){
 
-?>
-
-<script>
-    if (window.confirm("Are you sure you want to remove this?")) {
-<?php
     $id=$_GET['id'];
+    $action=$_GET['action'];
 
-    mysqli_query($conn,"DELETE FROM `products` WHERE id = '$id'");
-    header('location:db.php');
+    echo "<h3>Are you sure you want to remove this product?</h3>";
+    echo '<a href="?id='. $id .'&&action=yes">Yes</a>';
+    echo "<br>";
+    echo '<a href="?id='. $id .'&&action=no">No</a>';
 
-?>
-    }else{
-        window.location.href = "db.php";
+    if($action='yes'){
+        mysqli_query($conn,"DELETE FROM `products` WHERE id = '$id'");
+        header('location:db.php');
+    }elseif($action='no'){
+        header('location:db.php');
     }
-</script>          
-<?php
+
 
 }
 ?>

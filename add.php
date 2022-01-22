@@ -11,7 +11,7 @@ $quantity = $_POST['quantity'];
 $cost = $_POST['cost'];
 
 mysqli_query($conn,"INSERT INTO `products` (`type`, `model`, `quantity`, `cost`) VALUES ('".$type."','".$model."','".$quantity."','".$cost."')");
-header('Location: db.php');
+header('location:db.php');
 
 }
 ?>
