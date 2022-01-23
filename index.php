@@ -14,15 +14,15 @@
     <h3>Login</h3>
     <label>User:</label>
     <br>
-    <input type="text" name="txtusuario"/>
+    <input type="text" name="txtuser"/>
     <br>
     <br>
     <label>Password:</label>
     <br>
-    <input type="password" name="txtpassword" />
+    <input type="password" name="txtpass" />
     <br>
     <br>
-    <input type="submit" value="Ingresar" />
+    <input type="submit" value="Login" />
     </form>
 
     <center>

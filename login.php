@@ -1,17 +1,17 @@
 <?php
 include('conn.php');
 
-$nombre = $_POST["txtusuario"];
-$pass = $_POST["txtpassword"];
+$user = $_POST["txtuser"];
+$pass = $_POST["txtpass"];
 
-$query = mysqli_query($conn,"SELECT `user`, `pass` FROM `users` WHERE user='$nombre' AND pass='$pass'");
+$query = mysqli_query($conn,"SELECT `user`, `pass` FROM `users` WHERE user='$user' AND pass='$pass'");
 $nr = mysqli_num_rows($query);
 
 if($nr == 1)
 {
     
     $cookie_name = "user";
-    $cookie_value = $nombre;
+    $cookie_value = $user;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/");
     
     $cookie_name = "pass";
