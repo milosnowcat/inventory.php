@@ -16,10 +16,10 @@ if($start == 1){
 
         $action=$_GET['action'];
 
-        if($action='yes'){
+        if($action=='yes'){
             mysqli_query($conn,"DELETE FROM `products` WHERE id = '$id'");
             header('Location: db.php');
-        }elseif($action='no'){
+        }elseif($action=='no'){
             header('Location: db.php');
         }
     }
