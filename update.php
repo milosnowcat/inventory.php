@@ -11,7 +11,7 @@ $quantity=$_POST['quantity'];
 $cost=$_POST['cost'];
 
 mysqli_query($conn,"UPDATE `products` SET `type`='$type',`model`='$model',`quantity`='$quantity',`cost`='$cost' WHERE id = '$id'");
-header('location:db.php');
+header('Location: db.php');
 
 }
 ?>
