@@ -18,8 +18,6 @@ if(!isset($_COOKIE['user']) || !isset($_COOKIE['pass']) || ($_COOKIE['user']==''
         $start = 1;
     }
     else if ($nr == 0){
-        //header("Location: login.html");
-        //echo "No ingreso"; 
         $cookie_name = "user";
         $cookie_value = '';
         setcookie($cookie_name, $cookie_value, time() + (86400), "/");

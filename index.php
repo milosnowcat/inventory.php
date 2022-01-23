@@ -32,3 +32,9 @@
     </center>
 </body>
 </html>
+
+<?php
+    if(isset($_COOKIE['user']){
+        header("Location: db.php");
+    }
+?>
