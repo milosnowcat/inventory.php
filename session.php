@@ -3,7 +3,7 @@ include('conn.php');
 
 $start = 0;
 
-if(!isset($_COOKIE['user']) || !isset($_COOKIE['pass'])){
+if(!isset($_COOKIE['user']) || !isset($_COOKIE['pass']) || ($_COOKIE['user']=='') || ($_COOKIE['pass']=='')){
     header("Location: index.php");
   }
   else{
@@ -20,7 +20,15 @@ if(!isset($_COOKIE['user']) || !isset($_COOKIE['pass'])){
     else if ($nr == 0){
         //header("Location: login.html");
         //echo "No ingreso"; 
-        echo "<script> alert('Error');window.location= 'index.php' </script>";
+        $cookie_name = "user";
+        $cookie_value = '';
+        setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+        
+        $cookie_name = "pass";
+        $cookie_value = '';
+        setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+
+        echo "<script> alert('Please login first');window.location= 'index.php' </script>";
     }
 }
 ?>
