@@ -26,10 +26,12 @@
     </form>
 
     <center>
-        Developed by Ramiro Alvarez Hernández
-        <br>
-        <iframe src="https://www.rahcode.com/footer.html" frameborder="0" width="100%" height="100%"></iframe>
+            Developed by Ramiro Alvarez Hernández
+            <br>
+            <div id="footer"></div>
     </center>
+
+    <script src="https://www.rahcode.com/footer.js"></script>
 </body>
 </html>
 
