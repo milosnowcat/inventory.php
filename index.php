@@ -34,7 +34,7 @@
 </html>
 
 <?php
-    if(isset($_COOKIE['user']){
+    if(isset($_COOKIE['user'])){
         header("Location: db.php");
     }
 ?>
