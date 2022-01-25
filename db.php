@@ -26,7 +26,7 @@ if($start == 1){
         <input type="submit" name="search" id="search" value="Search">
     </form>
 
-    <h3>Cantidad</h3>
+    <h3>Quantity</h3>
     <a href="?quantity=0">0</a>
     <a href="?quantity=1">1</a>
     <a href="db.php">all</a>
