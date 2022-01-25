@@ -13,16 +13,9 @@ if($start == 1){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>db</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#sales">Sales</a></li>
-        <li><a href="#expenses">Expenses</a></li>
-    </ul>
-
     <h1 id="products">Products</h1>
 
     <h3><a href="new.php">Add a product</a></h3>
