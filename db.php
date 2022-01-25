@@ -73,12 +73,47 @@ if($start == 1){
 
         $result = $conn->query($sql);
 
+        $quantity_total = 0;
+        $cost_total = 0;
+
         if ($result !== false && $result->num_rows > 0){
             while ($row = $result-> fetch_assoc()){
-                $edit = "edit.php?id=" . $row['id'];
-                $delete = "delete.php?id=" . $row['id'];
-                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["type"] . "</td><td>" . $row["model"] . "</td><td>" . $row["quantity"] . "</td><td>" . $row["cost"] . "</td><td>" . "<a href=$edit>Edit</a> " . " <a href=$delete>Delete</a>" . "</td></tr>";
+
+                $product_id = $row['id'];
+                $product_type = $row['type'];
+                $product_model = $row['model'];
+                $product_quantity = $row['quantity'];
+                $product_cost = $row['cost'];
+
+                $quantity_total = $quantity_total + $product_quantity;
+                $cost_total = $cost_total + ($product_quantity * $product_cost);
+
+                $product_edit = "edit.php?id=$product_id";
+                $product_delete = "delete.php?id=$product_id";
+                ?>
+
+
+
+                <tr>
+                    <td><?php echo $product_id ?></td>
+                    <td><?php echo $product_type ?></td>
+                    <td><?php echo $product_model ?></td>
+                    <td><?php echo $product_quantity ?></td>
+                    <td><?php echo $product_cost ?></td>
+                    <td>
+                        <a href=<?php echo $product_edit ?>>Edit</a>
+                        <a href=<?php echo $product_delete ?>>Delete</a>
+                    </td>
+                </tr>
+
+                <?php
             }
+
+            echo "Total quantity: $quantity_total";
+            echo "<br><br>";
+            echo "Total cost: $cost_total";
+            echo "<br><br>";
+
         }
         else{
             echo "No Results";
