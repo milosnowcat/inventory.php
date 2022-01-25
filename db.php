@@ -31,8 +31,7 @@ if($start == 1){
     <a href="?quantity=1">1</a>
     <a href="db.php">all</a>
 
-    <br>
-    <br>
+    <h1>Products</h1>
 
     <table border="1">
         <tr>
