@@ -17,6 +17,11 @@ if($start == 1){
     <title>db</title>
 </head>
 <body>
+    <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#sales">Sales</a></li>
+        <li><a href="#expenses">Expenses</a></li>
+    </ul>
 
     <h1 id="products">Products</h1>
 
@@ -125,6 +130,11 @@ if($start == 1){
     
     <h1 id="sales">Sales</h1>
 
+    <br>
+    <br>
+
+    <h1 id="expenses">Expenses</h1>
+    
     <br>
     <br>
     <center>
