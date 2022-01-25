@@ -13,6 +13,7 @@ if($start == 1){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>db</title>
 </head>
 <body>
@@ -32,59 +33,61 @@ if($start == 1){
     <br>
     <br>
 
-    <table border="1">
-        <tr>
-            <th>Id</th>
-            <th>Type</th>
-            <th>Model</th>
-            <th>Quantity</th>
-            <th>Cost</th>
-            <th>Options</th>
-        </tr>
+    <div class="scrollable">
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Model</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+                <th>Options</th>
+            </tr>
 
-        <?php
-        if(isset($_GET['quantity'])){
-            $id = $_GET['quantity'];
-            $sql = "SELECT * FROM products WHERE quantity = ".$id."";
-        }
-        else{
-            $sql = "SELECT * FROM products ";
-        }
-        
-        
-
-        // Search
-
-        if(isset($_POST['search'])){
+            <?php
+            if(isset($_GET['quantity'])){
+                $id = $_GET['quantity'];
+                $sql = "SELECT * FROM products WHERE quantity = ".$id."";
+            }
+            else{
+                $sql = "SELECT * FROM products ";
+            }
             
-            $search = $_POST['stringSearch'];
+            
 
-            if($_POST['stringSearch'] == ''){
-                $sql = "SELECT * FROM products";
-            }else{
-                $sql .= "WHERE (type LIKE LOWER ('%$search%') OR model LIKE LOWER ('%$search%'))";
+            // Search
+
+            if(isset($_POST['search'])){
+                
+                $search = $_POST['stringSearch'];
+
+                if($_POST['stringSearch'] == ''){
+                    $sql = "SELECT * FROM products";
+                }else{
+                    $sql .= "WHERE (type LIKE LOWER ('%$search%') OR model LIKE LOWER ('%$search%'))";
+                    }
+
                 }
 
+            // Search
+
+            $result = $conn->query($sql);
+
+            if ($result !== false && $result->num_rows > 0){
+                while ($row = $result-> fetch_assoc()){
+                    $edit = "edit.php?id=" . $row['id'];
+                    $delete = "delete.php?id=" . $row['id'];
+                    echo "<tr><td>" . $row["id"] . "</td><td>" . $row["type"] . "</td><td>" . $row["model"] . "</td><td>" . $row["quantity"] . "</td><td>" . $row["cost"] . "</td><td>" . "<a href=$edit>Edit</a> " . " <a href=$delete>Delete</a>" . "</td></tr>";
+                }
             }
-
-        // Search
-
-        $result = $conn->query($sql);
-
-        if ($result !== false && $result->num_rows > 0){
-            while ($row = $result-> fetch_assoc()){
-                $edit = "edit.php?id=" . $row['id'];
-                $delete = "delete.php?id=" . $row['id'];
-                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["type"] . "</td><td>" . $row["model"] . "</td><td>" . $row["quantity"] . "</td><td>" . $row["cost"] . "</td><td>" . "<a href=$edit>Edit</a> " . " <a href=$delete>Delete</a>" . "</td></tr>";
+            else{
+                echo "No Results";
             }
-        }
-        else{
-            echo "No Results";
-        }
-        $conn->close();
-        ?>
+            $conn->close();
+            ?>
 
-    </table>
+        </table>
+    </div>
 
     <br>
     <br>
