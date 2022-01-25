@@ -33,9 +33,6 @@ if($start == 1){
     <a href="?quantity=1">1</a>
     <a href="db.php">all</a>
 
-    <br>
-    <br>
-
     <table border="1">
         <tr>
             <th>Id</th>
@@ -112,9 +109,7 @@ if($start == 1){
             }
 
             echo "<p>Total quantity: $quantity_total<p>";
-            echo "<br>";
             echo "<p>Total cost: $cost_total<p>";
-            echo "<br><br>";
 
         }
         else{
