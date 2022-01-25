@@ -16,6 +16,8 @@ if($start == 1){
     <title>db</title>
 </head>
 <body>
+    <h2><a href="#total">Total</a></h2>
+
     <h1 id="products">Products</h1>
 
     <h3><a href="new.php">Add a product</a></h3>
@@ -105,10 +107,6 @@ if($start == 1){
 
                 <?php
             }
-
-            echo "<p>Total quantity: $quantity_total<p>";
-            echo "<p>Total cost: $cost_total<p>";
-
         }
         else{
             echo "No Results";
@@ -128,6 +126,15 @@ if($start == 1){
 
     <h1 id="expenses">Expenses</h1>
     
+    <br>
+    <br>
+
+    <h1 id="total">Total</h1>
+    <?php
+        echo "<p>Total quantity: $quantity_total<p>";
+        echo "<p>Total cost: $cost_total<p>";
+    ?>
+
     <br>
     <br>
     <center>
