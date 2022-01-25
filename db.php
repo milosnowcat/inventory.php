@@ -18,6 +18,8 @@ if($start == 1){
 </head>
 <body>
 
+    <h1 id="products">Products</h1>
+
     <h3><a href="new.php">Add a product</a></h3>
 
     <h3>Search</h3>
@@ -30,8 +32,6 @@ if($start == 1){
     <a href="?quantity=0">0</a>
     <a href="?quantity=1">1</a>
     <a href="db.php">all</a>
-
-    <h1>Products</h1>
 
     <table border="1">
         <tr>
@@ -125,6 +125,10 @@ if($start == 1){
     <br>
     <br>
     
+    <h1 id="sales">Sales</h1>
+
+    <br>
+    <br>
     <center>
             Developed by Ramiro Alvarez Hernández
             <br>
