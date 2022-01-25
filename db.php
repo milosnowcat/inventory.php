@@ -17,6 +17,7 @@ if($start == 1){
     <title>db</title>
 </head>
 <body>
+
     <h3><a href="new.php">Add a product</a></h3>
 
     <h3>Search</h3>
@@ -24,7 +25,7 @@ if($start == 1){
         <input type="search" name="stringSearch" id="stringSearch">
         <input type="submit" name="search" id="search" value="Search">
     </form>
-    <br>
+
     <h3>Cantidad</h3>
     <a href="?quantity=0">0</a>
     <a href="?quantity=1">1</a>
@@ -33,61 +34,59 @@ if($start == 1){
     <br>
     <br>
 
-    <div class="scrollable">
-        <table border="1">
-            <tr>
-                <th>Id</th>
-                <th>Type</th>
-                <th>Model</th>
-                <th>Quantity</th>
-                <th>Cost</th>
-                <th>Options</th>
-            </tr>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th>Options</th>
+        </tr>
 
-            <?php
-            if(isset($_GET['quantity'])){
-                $id = $_GET['quantity'];
-                $sql = "SELECT * FROM products WHERE quantity = ".$id."";
-            }
-            else{
-                $sql = "SELECT * FROM products ";
-            }
+        <?php
+        if(isset($_GET['quantity'])){
+            $id = $_GET['quantity'];
+            $sql = "SELECT * FROM products WHERE quantity = ".$id."";
+        }
+        else{
+            $sql = "SELECT * FROM products ";
+        }
+        
+        
+
+        // Search
+
+        if(isset($_POST['search'])){
             
-            
+            $search = $_POST['stringSearch'];
 
-            // Search
-
-            if(isset($_POST['search'])){
-                
-                $search = $_POST['stringSearch'];
-
-                if($_POST['stringSearch'] == ''){
-                    $sql = "SELECT * FROM products";
-                }else{
-                    $sql .= "WHERE (type LIKE LOWER ('%$search%') OR model LIKE LOWER ('%$search%'))";
-                    }
-
+            if($_POST['stringSearch'] == ''){
+                $sql = "SELECT * FROM products";
+            }else{
+                $sql .= "WHERE (type LIKE LOWER ('%$search%') OR model LIKE LOWER ('%$search%'))";
                 }
 
-            // Search
-
-            $result = $conn->query($sql);
-
-            if ($result !== false && $result->num_rows > 0){
-                while ($row = $result-> fetch_assoc()){
-                    $edit = "edit.php?id=" . $row['id'];
-                    $delete = "delete.php?id=" . $row['id'];
-                    echo "<tr><td>" . $row["id"] . "</td><td>" . $row["type"] . "</td><td>" . $row["model"] . "</td><td>" . $row["quantity"] . "</td><td>" . $row["cost"] . "</td><td>" . "<a href=$edit>Edit</a> " . " <a href=$delete>Delete</a>" . "</td></tr>";
-                }
             }
-            else{
-                echo "No Results";
-            }
-            $conn->close();
-            ?>
 
-        </table>
-    </div>
+        // Search
+
+        $result = $conn->query($sql);
+
+        if ($result !== false && $result->num_rows > 0){
+            while ($row = $result-> fetch_assoc()){
+                $edit = "edit.php?id=" . $row['id'];
+                $delete = "delete.php?id=" . $row['id'];
+                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["type"] . "</td><td>" . $row["model"] . "</td><td>" . $row["quantity"] . "</td><td>" . $row["cost"] . "</td><td>" . "<a href=$edit>Edit</a> " . " <a href=$delete>Delete</a>" . "</td></tr>";
+            }
+        }
+        else{
+            echo "No Results";
+        }
+        $conn->close();
+        ?>
+
+    </table>
 
     <br>
     <br>
