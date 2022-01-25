@@ -46,8 +46,8 @@ if($start == 1){
 
         <?php
         if(isset($_GET['quantity'])){
-            $id = $_GET['quantity'];
-            $sql = "SELECT * FROM products WHERE quantity = ".$id."";
+            $search_quantity = $_GET['quantity'];
+            $sql = "SELECT * FROM products WHERE quantity = ".$search_quantity."";
         }
         else{
             $sql = "SELECT * FROM products ";
