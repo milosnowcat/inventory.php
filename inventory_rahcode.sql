@@ -31,8 +31,8 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `type` varchar(255) DEFAULT NULL,
   `model` varchar(255) DEFAULT NULL,
-  `quantity` decimal(5,0) DEFAULT 1,
-  `cost` decimal(5,2) DEFAULT 76.00
+  `quantity` decimal(5,0) DEFAULT NULL,
+  `cost` decimal(7,2), DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
