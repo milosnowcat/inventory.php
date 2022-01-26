@@ -104,7 +104,7 @@ if($start == 1){
                 <?php
             }
             echo "<h3>Export to:</h3>";
-            echo "<a href='export-xlsx.php?sql=".$sql."'>Excel</a>";
+            echo "<a href='export-xlsx.php'>Excel</a>";
             echo "<br><br>";
             echo "<p>Total quantity: $quantity_total</p>";
             echo "<p>Total cost: $cost_total</p>";
