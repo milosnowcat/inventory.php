@@ -1,10 +1,10 @@
 <!-- RAH Code -->
 
 <?php
-$dbHost = "localhost";
-$dbUser = "root";
+$dbHost = "";
+$dbUser = "";
 $dbPass = "";
-$dbName = "inventory_rahcode";
+$dbName = "";
 
 $conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 
