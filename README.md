@@ -16,3 +16,7 @@ $dbName = "";
 4. In your database create the users (with INSERT)
 5. Upload to a host the php files
 6. Now you are ready to use it :)
+7. If you want to update
+```
+git pull
+```
