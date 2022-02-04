@@ -2,18 +2,30 @@
 
 <?php
 include('session.php');
+include('admin_users.php');
 
 if($start == 1){
 
-$id=$_GET['id'];
+    $id=$_GET['id'];
 
-$type=$_POST['type'];
-$model=$_POST['model'];
-$quantity=$_POST['quantity'];
-$cost=$_POST['cost'];
+    echo "<h3>Are you sure you want to remove this product?</h3>";
+    echo '<a href="?id='. $id .'&action=yes">Yes</a>';
+    echo "<br>";
+    echo "<br>";
+    echo '<a href="?id='. $id .'&action=no">No</a>';
 
-mysqli_query($conn,"UPDATE `products` SET `type`='$type',`model`='$model',`quantity`='$quantity',`cost`='$cost' WHERE id = '$id'");
-header('Location: inventory.php');
+
+    if(isset($_GET['action'])){
+
+        $action=$_GET['action'];
+
+        if($action=='yes'){
+            mysqli_query($conn,"DELETE FROM `users` WHERE id = '$id'");
+            header('Location: users.php');
+        }elseif($action=='no'){
+            header('Location: users.php');
+        }
+    }
 
 }elseif($start == 2){
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
@@ -26,7 +38,7 @@ header('Location: inventory.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>update</title>
+    <title>delete</title>
 </head>
 <body>
     <center>

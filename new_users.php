@@ -17,17 +17,16 @@ if($start == 1){
 </head>
 <body>
     <h3>Add</h3>
-    <form action="add.php" method="POST">
-        <label>Type (PRODUCT BRAND): </label><input type="text" name="type" id="type"><br><br>
-        <label>Model: </label><input type="text" name="model" id="model"><br><br>
-        <label>Quantity: </label><input type="number" name="quantity" id="quantity" value="1"><br><br>
-        <label>Cost: </label><input type="number" name="cost" id="cost" value="76"><br><br>
+    <form action="add_users.php" method="POST">
+        <label>Username: </label><input type="text" name="user" id="user"><br><br>
+        <label>Password: </label><input type="text" name="pass" id="pass"><br><br>
+        <label>Admin: </label><input type="number" name="admin" id="admin" value="0"><br><br>
         <input type="submit" value="Add" name="add" id="add">
     </form>
 
     <br>
     <br>
-    <a href="inventory.php">Back</a>
+    <a href="users.php">Back</a>
 
 <?php
 }elseif($start == 2){

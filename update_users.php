@@ -2,18 +2,18 @@
 
 <?php
 include('session.php');
+include('admin_users.php');
 
 if($start == 1){
 
 $id=$_GET['id'];
 
-$type=$_POST['type'];
-$model=$_POST['model'];
-$quantity=$_POST['quantity'];
-$cost=$_POST['cost'];
+$db_user=$_POST['user'];
+$db_pass=$_POST['pass'];
+$db_admin=$_POST['admin'];
 
-mysqli_query($conn,"UPDATE `products` SET `type`='$type',`model`='$model',`quantity`='$quantity',`cost`='$cost' WHERE id = '$id'");
-header('Location: inventory.php');
+mysqli_query($conn,"UPDATE `users` SET `user`='$db_user',`pass`='$db_pass',`admin`='$db_admin' WHERE id = '$id'");
+header('Location: users.php');
 
 }elseif($start == 2){
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";

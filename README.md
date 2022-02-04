@@ -20,3 +20,4 @@ $dbName = "";
 ```
 git pull
 ```
+8. If you want to update the database just make a backup, delete the old database, upload the new and INSERT the backup

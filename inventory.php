@@ -3,8 +3,7 @@
 <?php
 include('session.php');
 
-if($start == 1){
-
+if($start == 1 || $start = 2){
 ?>
 
 <!DOCTYPE html>
@@ -13,21 +12,25 @@ if($start == 1){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>db</title>
+    <title>inventory</title>
 </head>
 <body>
+    <p><a href="logout.php">Logout</a></p>
+    
+    <h4><a href="users.php">Users</a></h4>
+
     <h3><a href="new.php">Add a product</a></h3>
 
     <h3>Search</h3>
-    <form action="db.php" method="post">
-        <input type="search" name="stringSearch" id="stringSearch">
-        <input type="submit" name="search" id="search" value="Search">
+    <form method="post">
+        <input type="search" name="search" id="search">
+        <input type="submit" name="subSearch" id="subSearch" value="Search">
     </form>
 
     <h3>Quantity</h3>
     <a href="?quantity=0">0</a>
     <a href="?quantity=1">1</a>
-    <a href="db.php">all</a>
+    <a href="inventory.php">all</a>
 
     <table border="1">
         <tr>
@@ -42,7 +45,7 @@ if($start == 1){
         <?php
         if(isset($_GET['quantity'])){
             $search_quantity = $_GET['quantity'];
-            $sql = "SELECT * FROM products WHERE quantity = ".$search_quantity."";
+            $sql = "SELECT * FROM products WHERE quantity = ".$search_quantity." ";
         }
         else{
             $sql = "SELECT * FROM products ";
@@ -51,19 +54,16 @@ if($start == 1){
         
 
         // Search
+        if(isset($_POST['subSearch'])){
+            $search = $_POST['search'];
+            header("Location: ?search=$search");
+        }
 
-        if(isset($_POST['search'])){
+        if(isset($_GET['search'])){
+            $search = $_GET['search'];
             
-            $search = $_POST['stringSearch'];
-
-            if($_POST['stringSearch'] == ''){
-                $sql = "SELECT * FROM products";
-            }else{
-                $sql .= "WHERE (type LIKE LOWER ('%$search%') OR model LIKE LOWER ('%$search%'))";
-                }
-
-            }
-
+            $sql = "SELECT * FROM products WHERE (type LIKE LOWER ('%$search%') OR model LIKE LOWER ('%$search%'))";
+        }
         // Search
 
         $result = $conn->query($sql);

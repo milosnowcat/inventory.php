@@ -2,11 +2,12 @@
 
 <?php
 include('session.php');
+include('admin_users.php');
 
 if($start == 1){
 
 $id=$_GET['id'];
-$query=mysqli_query($conn,"SELECT `id`, `type`, `model`, `quantity`, `cost` FROM `products` WHERE id = '$id'");
+$query=mysqli_query($conn,"SELECT * FROM `users` WHERE id = '$id'");
 $row=mysqli_fetch_array($query);
 ?>
 
@@ -21,19 +22,17 @@ $row=mysqli_fetch_array($query);
 <body>
 
     <h2>Edit</h2>
-    <form method="POST" action="update.php?id=<?php echo $id; ?>">
-    <label>Type:</label><input type="text" value="<?php echo $row['type']; ?>" name="type">
+    <form method="POST" action="update_users.php?id=<?php echo $id; ?>">
+    <label>Username:</label><input type="text" value="<?php echo $row['user']; ?>" name="user">
     <br>
-    <label>Model:</label><input type="text" value="<?php echo $row['model']; ?>" name="model">
+    <label>Password:</label><input type="text" value="<?php echo $row['pass']; ?>" name="pass">
     <br>
-    <label>Quantity:</label><input type="number" value="<?php echo $row['quantity']; ?>" name="quantity">
-    <br>
-    <label>Cost:</label><input type="number" value="<?php echo $row['cost']; ?>" name="cost">
+    <label>Admin:</label><input type="number" value="<?php echo $row['admin']; ?>" name="admin">
     <br>
     <input type="submit" value="Edit">
     <br>
     <br>
-    <a href="inventory.php">Back</a>
+    <a href="users.php">Back</a>
     </form>
 
     <center>

@@ -20,7 +20,7 @@ if($nr == 1)
     $cookie_value = $pass;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/");
     
-	header("Location: db.php");
+	header("Location: inventory.php");
 }
 else if ($nr == 0) 
 {

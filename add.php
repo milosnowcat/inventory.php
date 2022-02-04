@@ -11,8 +11,10 @@ $quantity = $_POST['quantity'];
 $cost = $_POST['cost'];
 
 mysqli_query($conn,"INSERT INTO `products` (`type`, `model`, `quantity`, `cost`) VALUES ('".$type."','".$model."','".$quantity."','".$cost."')");
-header('Location: db.php');
+header('Location: inventory.php');
 
+}elseif($start == 2){
+    echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>
 

@@ -37,6 +37,6 @@
 
 <?php
     if(isset($_COOKIE['user'])){
-        header("Location: db.php");
+        header("Location: inventory.php");
     }
 ?>

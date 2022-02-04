@@ -5,15 +5,12 @@ include('session.php');
 
 if($start == 1){
 
-$id=$_GET['id'];
+$db_user = $_POST['user'];
+$db_pass = $_POST['pass'];
+$db_admin = $_POST['admin'];
 
-$type=$_POST['type'];
-$model=$_POST['model'];
-$quantity=$_POST['quantity'];
-$cost=$_POST['cost'];
-
-mysqli_query($conn,"UPDATE `products` SET `type`='$type',`model`='$model',`quantity`='$quantity',`cost`='$cost' WHERE id = '$id'");
-header('Location: inventory.php');
+mysqli_query($conn,"INSERT INTO `users` (`user`, `pass`, `admin`) VALUES ('".$db_user."','".$db_pass."','".$db_admin."')");
+header('Location: users.php');
 
 }elseif($start == 2){
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
@@ -26,7 +23,7 @@ header('Location: inventory.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>update</title>
+    <title>add</title>
 </head>
 <body>
     <center>

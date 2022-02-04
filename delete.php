@@ -20,12 +20,14 @@ if($start == 1){
 
         if($action=='yes'){
             mysqli_query($conn,"DELETE FROM `products` WHERE id = '$id'");
-            header('Location: db.php');
+            header('Location: inventory.php');
         }elseif($action=='no'){
-            header('Location: db.php');
+            header('Location: inventory.php');
         }
     }
 
+}elseif($start == 2){
+    echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>
 

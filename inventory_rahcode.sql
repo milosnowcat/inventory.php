@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-01-2022 a las 23:30:05
+-- Tiempo de generación: 04-02-2022 a las 17:11:57
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -31,8 +31,8 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `type` varchar(255) DEFAULT NULL,
   `model` varchar(255) DEFAULT NULL,
-  `quantity` decimal(5,0) DEFAULT NULL,
-  `cost` decimal(7,2), DEFAULT NULL,
+  `quantity` decimal(5,0) DEFAULT 1,
+  `cost` decimal(5,2) DEFAULT 76.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -42,9 +42,11 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `users` (
-  `user` varchar(255) NOT NULL,
-  `pass` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+  `id` int(11) NOT NULL,
+  `user` varchar(255) DEFAULT NULL,
+  `pass` varchar(255) DEFAULT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Índices para tablas volcadas
@@ -57,6 +59,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -64,6 +72,12 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
