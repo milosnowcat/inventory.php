@@ -27,7 +27,7 @@ if($start == 1){
         }
     }
 
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

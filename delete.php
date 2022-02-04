@@ -3,7 +3,7 @@
 <?php
 include('session.php');
 
-if($start == 1){
+if($start == 1 || $start == 2){
 
     $id=$_GET['id'];
 
@@ -26,7 +26,7 @@ if($start == 1){
         }
     }
 
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

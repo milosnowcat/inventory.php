@@ -2,6 +2,7 @@
 
 <?php
 include('conn.php');
+include('superuser.php');
 
 $start = 0;
 
@@ -17,13 +18,17 @@ if(!isset($_COOKIE['user']) || !isset($_COOKIE['pass']) || ($_COOKIE['user']==''
 
 
     if ($nr == 1){
-        $start = 2;
+        $start = 3;
 
-        $query2 = mysqli_query($conn,"SELECT `admin` FROM `users` WHERE user = '$user'");
+        $query2 = mysqli_query($conn,"SELECT `id`, `admin` FROM `users` WHERE user = '$user'");
         $row=mysqli_fetch_array($query2);
 
         if ($row['admin'] == true){
-            $start = 1;
+            $start = 2;
+
+            if ($row['id'] == $superuser){
+                $start = 1;
+            }
         }
     }
     else if ($nr == 0){

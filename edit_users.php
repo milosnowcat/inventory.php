@@ -47,7 +47,7 @@ $row=mysqli_fetch_array($query);
 
 <?php
 
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

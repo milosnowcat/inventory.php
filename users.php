@@ -42,8 +42,7 @@ if($start == 1){
                 $product_edit = "edit_users.php?id=$db_id";
                 $product_delete = "delete_users.php?id=$db_id";
 
-                if($db_id == 1 || $db_id == 2){
-                    // ID 1 and 2 are for super users, no one is allowed to edit them
+                if($db_id == $superuser){
                 }else{
                     ?>
 
@@ -90,7 +89,7 @@ if($start == 1){
 </html>
 
 <?php
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

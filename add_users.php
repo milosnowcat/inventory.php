@@ -12,7 +12,7 @@ $db_admin = $_POST['admin'];
 mysqli_query($conn,"INSERT INTO `users` (`user`, `pass`, `admin`) VALUES ('".$db_user."','".$db_pass."','".$db_admin."')");
 header('Location: users.php');
 
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

@@ -29,7 +29,7 @@ if($start == 1){
     <a href="users.php">Back</a>
 
 <?php
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

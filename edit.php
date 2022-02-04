@@ -3,7 +3,7 @@
 <?php
 include('session.php');
 
-if($start == 1){
+if($start == 1 || $start == 2){
 
 $id=$_GET['id'];
 $query=mysqli_query($conn,"SELECT `id`, `type`, `model`, `quantity`, `cost` FROM `products` WHERE id = '$id'");
@@ -48,7 +48,7 @@ $row=mysqli_fetch_array($query);
 
 <?php
 
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

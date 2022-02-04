@@ -3,7 +3,7 @@
 <?php
 include('session.php');
 
-if($start == 1){
+if($start == 1 || $start == 2){
 
 ?>
 
@@ -30,7 +30,7 @@ if($start == 1){
     <a href="inventory.php">Back</a>
 
 <?php
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>

@@ -15,7 +15,7 @@ $db_admin=$_POST['admin'];
 mysqli_query($conn,"UPDATE `users` SET `user`='$db_user',`pass`='$db_pass',`admin`='$db_admin' WHERE id = '$id'");
 header('Location: users.php');
 
-}elseif($start == 2){
+}else{
     echo "<script> alert('You are not allowed to do this');window.location= 'inventory.php' </script>";
 }
 ?>
