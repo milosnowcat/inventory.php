@@ -15,6 +15,16 @@ if($start == 1 || $start == 2 || $start == 3){
     <title>inventory</title>
 </head>
 <body>
+
+    <?php
+        }
+        if($start == 1){
+            ?>
+            <p id="update"></p>
+            <?php
+        }
+    ?>
+    
     <p><a href="logout.php">Logout</a></p>
     
     <h4><a href="users.php">Users</a></h4>
@@ -113,38 +123,19 @@ if($start == 1 || $start == 2 || $start == 3){
 
     </table>
 
-    <br>
-    <br>
-    <center>
-            Developed by Ramiro Alvarez Hernández
-            <br>
-            <div id="footer"></div>
-    </center>
-
-    <script src="https://www.rahcode.com/footer.js"></script>
+    <!-- Check the app version -->
+    <script>
+        var url = 'https://inventoryphp.rahcode.com/version.json';
+        fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            // Do stuff with the contents of the JSON file here
+            if(json.App.version != 2021){
+                alert("Contact the administrator to update your app to the latest version");
+                document.getElementById("update").innerHTML = "<a href='docs'>Update Here</a>"
+            }
+        });
+    </script>
 </body>
 </html>
-
-<?php
-
-}
-if($start == 1){
-    ?>
-    
-<!-- Check the app version -->
-<script>
-    var url = 'https://www.rahcode.com/inventory.php/docs/version.json';
-    fetch(url)
-    .then(response => response.json())
-    .then(json => {
-        console.log(json);
-        // Do stuff with the contents of the JSON file here
-        if(json.App.version != 2022){
-            alert("Contact the administrator to update your app to the latest version");
-        }
-    });
-</script>
-
-    <?php
-}
-?>
