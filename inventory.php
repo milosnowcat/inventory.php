@@ -123,17 +123,33 @@ if($start == 1 || $start == 2 || $start == 3){
 
     </table>
 
+    <p id="version"></p>
+
     <!-- Check the app version -->
     <script>
+        var version = 0
+        var url = 'docs/version.json';
+        fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            
+            // Do stuff with the contents of the JSON file here
+            version = json.App.version;
+            console.log(version);
+            document.getElementById("version").innerHTML = "Your version: " +
+            version;
+            return version;
+        });
+
         var url = 'https://inventoryphp.rahcode.com/version.json';
         fetch(url)
         .then(response => response.json())
         .then(json => {
             console.log(json);
             // Do stuff with the contents of the JSON file here
-            if(json.App.version != 2021){
+            if (version != json.App.version){
                 alert("Contact the administrator to update your app to the latest version");
-                document.getElementById("update").innerHTML = "<a href='docs'>Update Here</a>"
+                document.getElementById("update").innerHTML = "<a href='docs'>Update Here</a>";
             }
         });
     </script>
