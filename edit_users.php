@@ -25,9 +25,13 @@ $row=mysqli_fetch_array($query);
     <form method="POST" action="update_users.php?id=<?php echo $id; ?>">
     <label>Username:</label><input type="text" value="<?php echo $row['user']; ?>" name="user">
     <br>
+    <br>
     <label>Password:</label><input type="text" value="<?php echo $row['pass']; ?>" name="pass">
     <br>
+    <br>
     <label>Admin:</label><input type="number" value="<?php echo $row['admin']; ?>" name="admin">
+    <p>0 = No</p>
+    <p>1 = Yes</p>
     <br>
     <input type="submit" value="Edit">
     <br>

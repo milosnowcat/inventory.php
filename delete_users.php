@@ -8,7 +8,7 @@ if($start == 1){
 
     $id=$_GET['id'];
 
-    echo "<h3>Are you sure you want to remove this product?</h3>";
+    echo "<h3>Are you sure you want to remove this user?</h3>";
     echo '<a href="?id='. $id .'&action=yes">Yes</a>';
     echo "<br>";
     echo "<br>";
