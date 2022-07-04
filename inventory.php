@@ -105,8 +105,7 @@ if($start == 1 || $start == 2 || $start == 3){
             }
             echo "<p>Total quantity: $quantity_total</p>";
             echo "<p>Total cost: $cost_total</p>";
-        }
-        else{
+        }else{
             echo "No Results";
         }
         $conn->close();
@@ -128,5 +127,24 @@ if($start == 1 || $start == 2 || $start == 3){
 
 <?php
 
+}
+if($start == 1){
+    ?>
+    
+<!-- Check the app version -->
+<script>
+    var url = 'https://www.rahcode.com/inventory.php/docs/version.json';
+    fetch(url)
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+        // Do stuff with the contents of the JSON file here
+        if(json.App.version != 2022){
+            alert("Contact the administrator to update your app to the latest version");
+        }
+    });
+</script>
+
+    <?php
 }
 ?>
