@@ -1,5 +1,3 @@
-<!-- RAH Code -->
-
 <?php
 include('session.php');
 include('admin_users.php');

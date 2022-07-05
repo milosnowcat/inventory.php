@@ -1,5 +1,3 @@
-<!-- RAH Code -->
-
 <?php
 $dbHost = "";
 $dbUser = "";
