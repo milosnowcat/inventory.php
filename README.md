@@ -11,8 +11,12 @@ $dbPass = "";
 $dbName = "";
 ```
 4. In your database create the users (with INSERT)
-5. Upload to a host the php files
-6. Now you are ready to use it :)
-7. Your version - http://example.com/docs/version.json -
-8. Updater [here](https://git.rahcode.com/inventory.php/releases/tag/Update)
-9. If you want to update the database just make a backup, delete the old database, upload the new and INSERT the backup
+5. Edit your SuperUser ID (superuser.php)
+```php
+$superuser = "";
+```
+6. Upload to a host the php files
+7. Now you are ready to use it :)
+8. Your version - http://example.com/docs/version.json -
+9. Updater [here](https://git.rahcode.com/inventory.php/releases/tag/Update)
+10. If you want to update the database just make a backup, delete the old database, upload the new and INSERT the backup
