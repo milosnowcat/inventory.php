@@ -28,13 +28,13 @@ if($start == 1 || $start == 2 || $start == 3){
         }
     </style>
 
-    <title>Login</title>
+    <title>inventory.php</title>
 </head>
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="/" class="nav__logo">RAH Code</a>
+        <a href="/" class="nav__logo">inventory.php</a>
 
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">
@@ -45,7 +45,6 @@ if($start == 1 || $start == 2 || $start == 3){
               </a>
             </li>
             <?php
-                }
                 if($start == 1){
                     ?>
                         <li class="nav__item">
@@ -200,7 +199,7 @@ if($start == 1 || $start == 2 || $start == 3){
             <br>
             <br>
             <p id="version"></p>
-            <p id="cloud_version">Cloud version: error</p>
+            <p id="git_version">GitHub version: error</p>
           </div>
         </div>
       </section>
@@ -228,13 +227,13 @@ if($start == 1 || $start == 2 || $start == 3){
         .then(json => {
 
             // Do stuff with the contents of the JSON file here
-            cloud_version = json.name;
-            console.log(cloud_version);
-            if (version != cloud_version){
+            git_version = json.name;
+            console.log(git_version);
+            if (version != git_version){
                 alert("Contact the administrator to update your app to the latest version");
             }
-            document.getElementById("cloud_version").innerHTML = "Cloud version: " +
-            cloud_version;
+            document.getElementById("git_version").innerHTML = "GitHub version: " +
+            git_version;
         });
     </script>
 
@@ -253,3 +252,8 @@ if($start == 1 || $start == 2 || $start == 3){
     <script src="https://www.rahcode.com/assets/js/main.js"></script>
 </body>
 </html>
+<?php
+}else{
+
+}
+?>

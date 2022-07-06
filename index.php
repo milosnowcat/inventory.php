@@ -22,7 +22,7 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="/" class="nav__logo">RAH Code</a>
+        <a href="/" class="nav__logo">inventory.php</a>
 
         <div class="nav__btns">
           <!-- Theme change button -->
@@ -34,25 +34,24 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== CONTACT ME ====================-->
-            <section class="contact section" id="contact">
-                <h2 class="section__title">Login</h2>
-                <span class="section__subtitle">If you don't have a user contact the administrator</span>
-                <div class="contact__container container grid">
-                    <div>
-                        <form method="post" action="login.php" class="contact__form grid">
-                            <div class="contact__inputs grid">
-                                <div class="contact__content">
-                                    <label for="" class="contact__labe">User</label>
-                                    <input type="text" class="contact__input"  name="txtuser" />
-                                </div>
-                                <div class="contact__content">
-                                    <label for="" class="contact__labe">Password</label>
-                                    <input type="password" class="contact__input" name="txtpass" />
-                                </div>
-                                    <input type="submit" value="Login" class="button button--flex" />
-                            </div>
-                        </form>
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Login</h2>
+            <span class="section__subtitle">If you don't have a user contact the administrator</span>
+            <div class="contact__container container grid">
+                <div>
+                    <form method="post" action="login.php" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="" class="contact__labe">User</label>
+                            <input type="text" class="contact__input"  name="txtuser" />
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__labe">Password</label>
+                            <input type="password" class="contact__input" name="txtpass" />
+                        </div>
+                        <input type="submit" value="Login" class="button button--flex" />
                     </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -73,5 +72,5 @@
             header('Location: inventory.php');
         }
     ?>
-</body>
+  </body>
 </html>
