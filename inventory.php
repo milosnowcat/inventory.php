@@ -100,7 +100,7 @@ if($start == 1 || $start == 2 || $start == 3){
             <br>
             <br>
             <br>
-            <!-- <form method="post" class="contact__form grid">
+            <form method="post" class="contact__form grid">
                 <div class="contact__inputs grid">
                     <div class="contact__content">
                         <input type="search" name="search" id="search" class="contact__input">
@@ -109,7 +109,7 @@ if($start == 1 || $start == 2 || $start == 3){
                 </div>
             </form>
             <br>
-            <br> -->
+            <br>
             <a href="?quantity=0" class="button button--flex">0</a>
             <a href="?quantity=1" class="button button--flex">1</a>
             <a href="inventory.php" class="button button--flex">all</a>
@@ -137,7 +137,7 @@ if($start == 1 || $start == 2 || $start == 3){
                 // Search
                 if(isset($_POST['subSearch'])){
                     $search = $_POST['search'];
-                    header("Location: ?search=$search");
+                    echo '<script>window.location.href = "?search=' . $search .'"</script>';
                 }
 
                 if(isset($_GET['search'])){
