@@ -30,13 +30,13 @@ if($start == 1 || $start == 2){
       href="https://www.rahcode.com/assets/css/styles.css"
     />
 
-    <title>inventory.php</title>
+    <title>delete</title>
   </head>
   <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="https://www.rahcode.com" class="nav__logo">RAH Code</a>
+        <a href="/" class="nav__logo">inventory.php</a>
 
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">

@@ -16,7 +16,7 @@
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="https://www.rahcode.com/assets/css/styles.css" />
 
-    <title>Login</title>
+    <title>login</title>
 </head>
 <body>
     <!--==================== HEADER ====================-->

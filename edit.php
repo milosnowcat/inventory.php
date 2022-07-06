@@ -32,7 +32,7 @@ $row=mysqli_fetch_array($query);
       href="https://www.rahcode.com/assets/css/styles.css"
     />
 
-    <title>New Product</title>
+    <title>edit</title>
   </head>
   <body>
     <!--==================== HEADER ====================-->

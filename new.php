@@ -29,7 +29,7 @@ if($start == 1 || $start == 2){
       href="https://www.rahcode.com/assets/css/styles.css"
     />
 
-    <title>New Product</title>
+    <title>new</title>
   </head>
   <body>
     <!--==================== HEADER ====================-->
