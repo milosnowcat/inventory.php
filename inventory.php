@@ -222,13 +222,13 @@ if($start == 1 || $start == 2 || $start == 3){
             return version;
         });
 
-        var url = 'https://inventoryphp.rahcode.com/version.json';
+        var url = 'https://api.github.com/repos/miloalvarez9809/inventory.php/releases/latest';
         fetch(url)
         .then(response => response.json())
         .then(json => {
 
             // Do stuff with the contents of the JSON file here
-            cloud_version = json.App.version;
+            cloud_version = json.name;
             console.log(cloud_version);
             if (version != cloud_version){
                 alert("Contact the administrator to update your app to the latest version");
