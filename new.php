@@ -96,7 +96,7 @@ if($start == 1 || $start == 2){
                     <div class="contact__inputs grid">
                         <div class="contact__content">
                             <label for="" class="contact__labe">Type/Brand</label>
-                            <input type="text" class="contact__input"  name="type" />
+                            <input type="text" class="contact__input" name="type" />
                         </div>
                         <div class="contact__content">
                             <label for="" class="contact__labe">Model</label>
