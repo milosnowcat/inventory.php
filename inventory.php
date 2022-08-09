@@ -120,9 +120,9 @@ if($start == 1 || $start == 2 || $start == 3){
                     <th>Id</th>
                     <th>Type</th>
                     <th>Model</th>
-                    <th>Quantity</th>
-                    <th>Cost</th>
-                    <th>Options</th>
+                    <th>QTY</th>
+                    <th>$</th>
+                    <th>SETS</th>
                 </tr>
 
                 <?php
@@ -207,12 +207,42 @@ if($start == 1 || $start == 2 || $start == 3){
                             <td><?php echo $product_quantity ?></td>
                             <td><?php echo $product_cost ?></td>
                             <td>
-                                <a href=<?php echo $product_edit ?> class="button button--flex">
-                                    <i class="uil uil-edit"></i>
-                                </a>
-                                <a href=<?php echo $product_delete ?> class="button button--flex">
-                                    <i class="uil uil-trash-alt"></i>
-                                </a>
+                              <span class="button button--flex services__button">
+                                <i class="uil uil-setting button__icon"></i>
+                              </span>
+                              <div class="services__modal">
+                                <div class="services__modal-content">
+                                  <h4 class="services__modal-title">
+                                    <?php echo $product_id ?>
+                                    <br />
+                                    <?php echo $product_type ?>
+                                  </h4>
+                                  <i class="uil uil-times services__modal-close"></i>
+                                    <ul class="services__modal-services grid">
+                                      <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <a href="<?php echo $product_edit ?>">
+                                          <span class="button button--flex button--small button--link">
+                                            Edit
+                                            <i class="uil uil-edit button__icon"></i>
+                                          </span>
+                                        </a>
+                                      </li>
+                                    </ul>
+
+                                    <ul class="services__modal-services grid">
+                                      <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <a href="<?php echo $product_delete ?>">
+                                          <span class="button button--flex button--small button--link">
+                                            Delete
+                                            <i class="uil uil-trash-alt button__icon"></i>
+                                          </span>
+                                        </a>
+                                      </li>
+                                    </ul>
+                                </div>
+                              </div>
                             </td>
                         </tr>
 
