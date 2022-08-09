@@ -22,13 +22,12 @@ if($start == 1){
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="https://www.rahcode.com/assets/css/styles.css" />
     <style>
-        table, th, td {
-            border: 1px solid var(--first-color-second);
-            border-collapse: collapse;
+        td {
+          text-align: center;
         }
     </style>
 
-    <title>inventory.php</title>
+    <title>users</title>
 </head>
 <body>
     <!--==================== HEADER ====================-->
@@ -45,9 +44,9 @@ if($start == 1){
               </a>
             </li>
             <li class="nav__item">
-                <a href="inventory.php" class="nav__link">
+                <a href="users.php" class="nav__link active-link">
                     <i class="uil uil-user nav__icon"></i>
-                    Inventory
+                    Users
                 </a>
             </li>
             <li class="nav__item">
@@ -95,11 +94,11 @@ if($start == 1){
 
             <table>
                 <tr>
-                    <th>Id</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Admin</th>
-                    <th>Options</th>
+                    <th>ID</th>
+                    <th>USER</th>
+                    <th>PASS</th>
+                    <th>ADMIN</th>
+                    <th>SETS</th>
                 </tr>
 
                 <?php

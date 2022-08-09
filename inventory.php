@@ -22,9 +22,8 @@ if($start == 1 || $start == 2 || $start == 3){
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="https://www.rahcode.com/assets/css/styles.css" />
     <style>
-        table, th, td {
-            border: 1px solid var(--first-color-second);
-            border-collapse: collapse;
+        td {
+          text-align: center;
         }
     </style>
 
@@ -117,9 +116,9 @@ if($start == 1 || $start == 2 || $start == 3){
             <br>
             <table>
                 <tr>
-                    <th>Id</th>
-                    <th>Type</th>
-                    <th>Model</th>
+                    <th>ID</th>
+                    <th>TYPE</th>
+                    <th>MODEL</th>
                     <th>QTY</th>
                     <th>$</th>
                     <th>SETS</th>
