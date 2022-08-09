@@ -115,7 +115,7 @@ if($start == 1 || $start == 2 || $start == 3){
             <a href="inventory.php" class="button button--flex">all</a>
             <br>
             <br>
-            <table style="width:100%">
+            <table>
                 <tr>
                     <th>Id</th>
                     <th>Type</th>
@@ -171,7 +171,39 @@ if($start == 1 || $start == 2 || $start == 3){
                         <tr>
                             <td><?php echo $product_id ?></td>
                             <td><?php echo $product_type ?></td>
-                            <td><?php echo $product_model ?></td>
+                            <td>
+                              <span
+                                class="button button--flex button--small button--link services__button"
+                              >
+                                <?php 
+                                  $str_model = explode("/", $product_model);
+                                  echo $str_model[0];
+                                ?>
+                                <i class="uil uil-arrow-right button__icon"></i>
+                              </span>
+                              <div class="services__modal">
+                                <div class="services__modal-content">
+                                  <h4 class="services__modal-title">
+                                    <?php echo $product_id ?>
+                                    <br />
+                                    <?php echo $product_type ?>
+                                  </h4>
+                                  <i class="uil uil-times services__modal-close"></i>
+                                  <?php
+                                  foreach($str_model as $model_num){
+                                  ?>
+                                    <ul class="services__modal-services grid">
+                                      <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p><?php echo $model_num ?></p>
+                                      </li>
+                                    </ul>
+                                  <?php
+                                  }
+                                  ?>
+                                </div>
+                              </div>
+                            </td>
                             <td><?php echo $product_quantity ?></td>
                             <td><?php echo $product_cost ?></td>
                             <td>
@@ -227,7 +259,7 @@ if($start == 1 || $start == 2 || $start == 3){
         .then(json => {
 
             // Do stuff with the contents of the JSON file here
-            git_version = json.name;
+            git_version = json.tag_name;
             console.log(git_version);
             if (version != git_version){
                 alert("Contact the administrator to update your app to the latest version");
