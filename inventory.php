@@ -269,7 +269,7 @@ if($start == 1 || $start == 2 || $start == 3){
     <!-- Check the app version -->
     <script>
         var version = 0
-        var url = 'docs/version.json';
+        var url = 'docs/version.json?v=' + "<?php echo uniqid(); ?>";
         fetch(url)
         .then(response => response.json())
         .then(json => {
@@ -277,13 +277,14 @@ if($start == 1 || $start == 2 || $start == 3){
             // Do stuff with the contents of the JSON file here
             version = json.App.version;
             console.log(version);
+            console.log(url);
             document.getElementById("version").innerHTML = "Your version: " +
             version;
             return version;
         });
 
-        var url = 'https://api.github.com/repos/miloalvarez9809/inventory.php/releases/latest';
-        fetch(url)
+        var git_url = 'https://api.github.com/repos/miloalvarez9809/inventory.php/releases/latest';
+        fetch(git_url)
         .then(response => response.json())
         .then(json => {
 
