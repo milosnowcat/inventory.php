@@ -18,5 +18,5 @@ $superuser = "";
 6. Upload to a host the php files
 7. Now you are ready to use it :)
 8. Your version - http://example.com/docs/version.json -
-9. Updater [here](https://git.rahcode.com/inventory.php/releases/tag/Update)
+9. Updater [here](https://git.rahcode.com/inventory.php/releases/latest)
 10. If you want to update the database just make a backup, delete the old database, upload the new and INSERT the backup
