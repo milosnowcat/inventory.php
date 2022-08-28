@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-02-2022 a las 17:11:57
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 28-08-2022 a las 17:59:33
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `user` varchar(255) DEFAULT NULL,
   `pass` varchar(255) DEFAULT NULL,
-  `admin` tinyint(1) NOT NULL DEFAULT 0
+  `admin` tinyint(1) NOT NULL DEFAULT 0,
+  `date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
