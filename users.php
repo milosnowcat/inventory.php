@@ -96,8 +96,8 @@ if($start == 1){
                 <tr>
                     <th>ID</th>
                     <th>USER</th>
-                    <th>PASS</th>
                     <th>ADMIN</th>
+                    <th>DATE</th>
                     <th>SETS</th>
                 </tr>
 
@@ -111,8 +111,8 @@ if($start == 1){
 
                         $user_id = $row['id'];
                         $user_name = $row['user'];
-                        $user_pass = $row['pass'];
                         $user_admin = $row['admin'];
+                        $user_date = $row['date'];
 
                         $user_edit = "edit_users.php?id=$user_id";
                         $user_delete = "delete_users.php?id=$user_id";
@@ -123,8 +123,8 @@ if($start == 1){
                             <tr>
                                 <td><?php echo $user_id ?></td>
                                 <td><?php echo $user_name ?></td>
-                                <td><?php echo $user_pass ?></td>
                                 <td><?php echo $user_admin ?></td>
+                                <td><?php echo $user_date ?></td>
                                 <td>
                                     <span class="button button--flex services__button">
                                         <i class="uil uil-setting button__icon"></i>

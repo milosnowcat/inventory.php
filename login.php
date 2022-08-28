@@ -17,6 +17,11 @@ if($nr == 1)
     $cookie_name = "pass";
     $cookie_value = $pass;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+
+    date_default_timezone_set("America/Mexico_City");
+    $currentDate = date('Y-m-d');
+
+    mysqli_query($conn,"UPDATE `users` SET `date`='$currentDate' WHERE user='$user'");
     
 	header("Location: inventory.php");
 }
