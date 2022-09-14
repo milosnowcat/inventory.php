@@ -68,7 +68,9 @@
     <script src="https://www.rahcode.com/assets/js/main.js"></script>
 
     <?php
-        if (isset($_COOKIE['user'])) {
+        session_start();
+        
+        if (isset($_SESSION['user'])) {
             header('Location: inventory.php');
         }
     ?>

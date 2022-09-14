@@ -1,7 +1,5 @@
 <?php
 include('session.php');
-
-if($start == 1 || $start == 2 || $start == 3){
 ?>
 
 <!DOCTYPE html>
@@ -315,7 +313,4 @@ if($start == 1 || $start == 2 || $start == 3){
 </body>
 </html>
 <?php
-}else{
-
-}
 ?>
