@@ -65,7 +65,7 @@
     <script src="https://www.rahcode.com/assets/js/swiper-bundle.min.js"></script>
 
     <!--==================== MAIN JS ====================-->
-    <script src="https://www.rahcode.com/assets/js/main.js"></script>
+    <script src="https://www.rahcode.com/assets/js/main.js" type="module"></script>
 
     <?php
         session_start();

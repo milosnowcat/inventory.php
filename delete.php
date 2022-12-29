@@ -125,7 +125,7 @@ if($start == 1 || $start == 2){
     <script src="https://www.rahcode.com/assets/js/swiper-bundle.min.js"></script>
 
     <!--==================== MAIN JS ====================-->
-    <script src="https://www.rahcode.com/assets/js/main.js"></script>
+    <script src="https://www.rahcode.com/assets/js/main.js" type="module"></script>
   </body>
 </html>
 
