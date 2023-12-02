@@ -1,22 +1,61 @@
 # inventory.php
- An app to manage your inventory
+
+## Overview
+**Inventory.php** is a straightforward inventory management application designed to help you organize and track your inventory. This simple PHP-based system allows you to manage products and users efficiently. Follow the instructions below to set up and start using the app.
+
 ## Instructions
-1. Download [here](https://git.rahcode.com/inventory.php/releases/tag/Base)
-2. Upload the database (sql file)
-3. Create the database connection (conn.php)
-```php
-$dbHost = "";
-$dbUser = "";
-$dbPass = "";
-$dbName = "";
-```
-4. In your database create the users (with INSERT)
-5. Edit your SuperUser ID (superuser.php)
-```php
-$superuser = "";
-```
-6. Upload to a host the php files
-7. Now you are ready to use it :)
-8. Your version - http://example.com/docs/version.json -
-9. Updater [here](https://git.rahcode.com/inventory.php/releases/latest)
-10. If you want to update the database just make a backup, delete the old database, upload the new and INSERT the backup
+
+### Installation
+1. **Download:**
+   - Download the application from [here](https://github.com/milosnowcat/inventory.php/releases/latest).
+  
+2. **Database Setup:**
+   - Upload the provided SQL file to your database.
+  
+3. **Database Connection:**
+   - Create a database connection file named `conn.php`.
+   - Edit `conn.php` and set your database connection details:
+
+     ```php
+     <?php
+     $dbHost = "";
+     $dbUser = "";
+     $dbPass = "";
+     $dbName = "";
+     ?>
+     ```
+
+   - Save the file.
+
+4. **User Creation:**
+   - In your database, create user accounts using the INSERT statement.
+
+5. **SuperUser Configuration:**
+   - Edit the `superuser.php` file.
+   - Set your SuperUser ID:
+
+     ```php
+     <?php
+     $superuser = "";
+     ?>
+     ```
+
+   - Save the file.
+
+6. **Host Upload:**
+   - Upload all PHP files to your hosting server.
+
+### Usage
+1. Your application is now ready to use.
+
+### Database Update
+- If you need to update the database:
+   - Make a backup of your current database.
+   - Delete the old database.
+   - Upload the new database.
+   - Insert the backup to restore your data.
+
+## Support
+For any assistance or queries, contact me at [ramiro.alvarez@rahcode.com](mailto:ramiro.alvarez@rahcode.com).
+
+Thank you for choosing Inventory.php for your inventory management needs!
