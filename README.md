@@ -1,11 +1,5 @@
 # inventory.php
 
-## Live demo
-
-- [rahcode](https://8a42-2806-2f0-5521-fe9e-55ed-394d-9698-7f10.ngrok-free.app)
-- Username: admin
-- Password: admin
-
 ## Overview
 **Inventory.php** is a straightforward inventory management application designed to help you organize and track your inventory. This simple PHP-based system allows you to manage products and users efficiently. Follow the instructions below to set up and start using the app.
 
